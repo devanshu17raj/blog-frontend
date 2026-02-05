@@ -15,6 +15,8 @@ export default function CreatePost() {
         title: title,
         content: content,
         author: author
+
+
       });
 
       alert("Success! Post created.");

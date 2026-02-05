@@ -22,7 +22,7 @@ export default function PostList() {
 
   // 2. Handle Delete
   const handleDelete = async (id) => {
-    await axios.delete(`http://127.0.0.1:8000/posts/${id}`);
+    await axios.delete(`https://my-blog-api-muov.onrender.com/posts/${id}`);
     fetchPosts(); // Reload list
   };
 
@@ -34,7 +34,7 @@ export default function PostList() {
 
   // 4. Handle Save (Send changes to Python)
   const handleSave = async (id) => {
-    await axios.put(`http://127.0.0.1:8000/posts/${id}`, editFormData);
+    await axios.put(`https://my-blog-api-muov.onrender.com/posts/${id}`, editFormData);
     setEditingId(null); // Turn off "Edit Mode"
     fetchPosts(); // Reload list
   };
