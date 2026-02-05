@@ -1,0 +1,166 @@
+/* --- App.css (Professional Edition) --- */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+
+/* === VARIABLES === */
+:root {
+  --primary: #4f46e5;
+  --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --bg-color: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.5);
+  --shadow-soft: 0 10px 40px -10px rgba(0,0,0,0.05);
+  --shadow-hover: 0 20px 40px -5px rgba(0,0,0,0.1);
+}
+
+/* === RESET & LAYOUT === */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif; /* A more modern tech font */
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  /* Subtle background grid pattern */
+  background-image: 
+    radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+#root { width: 100%; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* === 1. GLASS NAVBAR === */
+.navbar {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px); /* THE FROSTED GLASS EFFECT */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-content {
+  width: 100%; max-width: 1000px; padding: 15px 25px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo {
+  font-weight: 800; font-size: 1.6rem; 
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Gradient Text Logo */
+  text-decoration: none; letter-spacing: -0.5px;
+}
+
+.nav-links { display: flex; align-items: center; gap: 20px; }
+
+/* === 2. MAIN CONTAINER === */
+.container {
+  width: 100%; max-width: 1000px; margin: 0 auto; padding: 50px 25px;
+  display: flex; flex-direction: column; flex: 1;
+}
+
+/* === 3. MODERN HERO SECTION === */
+.hero { text-align: center; margin-bottom: 60px; padding: 20px 0; }
+
+.hero h1 { 
+  font-size: 3.5rem; margin: 0 0 15px 0; letter-spacing: -1px; line-height: 1.1; 
+  background: linear-gradient(to right, #1e293b, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p { font-size: 1.25rem; color: var(--text-muted); margin: 0; max-width: 600px; margin: 0 auto; }
+
+/* === 4. SEARCH BAR (Floating) === */
+.search-wrapper { margin: 0 auto 60px; max-width: 550px; width: 100%; position: relative; }
+.search-input {
+  width: 100%; padding: 18px 30px; border-radius: 50px;
+  border: 1px solid transparent;
+  background: white;
+  box-shadow: var(--shadow-soft);
+  font-size: 1.1rem; text-align: center; transition: all 0.3s ease;
+}
+.search-input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -5px rgba(99, 102, 241, 0.15);
+  border-color: #cbd5e1; outline: none;
+}
+
+/* === 5. PRO CARDS === */
+.grid-container {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 35px;
+}
+
+.card {
+  background: white; border-radius: 20px; overflow: hidden;
+  border: 1px solid #f1f5f9;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+  display: flex; flex-direction: column; height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: var(--shadow-hover);
+  border-color: #e2e8f0;
+}
+
+.card-image-box { overflow: hidden; height: 220px; position: relative; }
+.card-image-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.card:hover .card-image-box img { transform: scale(1.08); }
+
+.card-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+
+.card-title { 
+  font-size: 1.4rem; font-weight: 700; margin: 0 0 10px 0; line-height: 1.3; color: var(--text-main);
+  transition: color 0.2s; 
+}
+.card:hover .card-title { color: var(--primary); }
+
+.card-meta {
+  margin-top: auto; padding-top: 20px; border-top: 1px solid #f1f5f9;
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 0.9rem; color: var(--text-muted);
+}
+
+/* === 6. BUTTONS (Gradients & Shadows) === */
+.btn {
+  padding: 10px 24px; border-radius: 12px; border: none; font-weight: 600; cursor: pointer;
+  font-size: 0.95rem; transition: all 0.2s ease;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+
+.btn:active { transform: scale(0.96); }
+
+.btn-primary { 
+  background: var(--primary-gradient); color: white; 
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+.btn-primary:hover { box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4); transform: translateY(-1px); }
+
+.btn-success { background: #10b981; color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
+.btn-danger { background: #ef4444; color: white; }
+.btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+
+/* === 7. FORMS === */
+form {
+  background: white; padding: 50px; border-radius: 24px;
+  box-shadow: var(--shadow-soft); margin: 0 auto; max-width: 700px; width: 100%;
+}
+input, textarea {
+  width: 100%; padding: 16px; border: 2px solid #e2e8f0; border-radius: 12px;
+  margin-bottom: 20px; font-size: 1rem; transition: border-color 0.2s; background: #f8fafc;
+}
+input:focus, textarea:focus { outline: none; border-color: var(--primary); background: white; }
+
+/* === FOOTER === */
+.footer {
+  text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem;
+  border-top: 1px solid #e2e8f0; background: white; margin-top: auto;
+}
