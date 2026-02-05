@@ -13,7 +13,7 @@ export default function PostList() {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/posts");
+      const response = await axios.get("https://my-blog-api-muov.onrender.com/posts");
       setPosts(response.data);
     } catch (error) {
       console.error("Error fetching posts:", error);

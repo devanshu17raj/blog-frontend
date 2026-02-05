@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { format } from "date-fns";
 
-const API_URL = "http://127.0.0.1:8000/posts";
+const API_URL = "https://my-blog-api-muov.onrender.com/posts";
 
 function UserProfile() {
   const { username } = useParams(); // URL will be /profile/Dev

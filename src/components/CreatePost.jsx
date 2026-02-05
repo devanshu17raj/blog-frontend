@@ -11,7 +11,7 @@ export default function CreatePost() {
     e.preventDefault(); 
     
     try {
-      await axios.post("http://127.0.0.1:8000/posts", {
+      await axios.post("https://my-blog-api-muov.onrender.com/posts", {
         title: title,
         content: content,
         author: author
