@@ -10,7 +10,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const API_URL = "https://my-blog-api-muov.onrender.com/login";
+    const API_URL = "https://my-blog-api-muov.onrender.com";
 
     try {
       if (isRegistering) {
